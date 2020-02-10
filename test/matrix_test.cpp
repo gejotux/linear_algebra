@@ -3,6 +3,7 @@
 #include <limits>
 #include <matrix.h>
 #include <memory>
+#include <avector.h>
 
 
 namespace linear_algebra_operations
@@ -455,7 +456,20 @@ TEST(MatrixTest, Cumulative_Product_Scalar_3x3Matrix_Test)
     EXPECT_EQ(matA,mat_to_compare); 
 }
 
+TEST(MatrixTest, Matrix_Vector_Multiplication_3x3Matrix_Test)
+{
+    Vector<int> vecA({2,1,3});
 
+    Array2D<int> arr{{1,2,3},{4,5,6},{7,8,9}};
+    Matrix<int> matA(arr);
+
+    Vector<int> product = matA.Multiply(vecA);
+
+    std::vector<int> arr1{13,31,49};
+    Vector<int> to_compare(arr1);
+
+    EXPECT_EQ(product,to_compare);
+}
 
 
 }//end of namespace linear_algebra_operations

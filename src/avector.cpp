@@ -57,7 +57,7 @@ namespace linear_algebra_operations
 
         for(int vec_index = 0; vec_index < vec.GetVectorSize();vec_index++)
         {
-            sum(vec_index) = this->m_value_[vec_index] + vec.m_value_[vec_index];
+            sum(vec_index) = this->m_value_[vec_index] + vec[vec_index];
         }
         return sum;
 
@@ -68,7 +68,7 @@ namespace linear_algebra_operations
     {
         for(int vec_index = 0; vec_index < vec.GetVectorSize();vec_index++)
         {
-            this->m_value_[vec_index] += vec.m_value_[vec_index];
+            this->m_value_[vec_index] += vec[vec_index];
         }
         return *this;
     }
@@ -80,7 +80,7 @@ namespace linear_algebra_operations
 
         for(int vec_index = 0; vec_index < vec.GetVectorSize();vec_index++)
         {
-            difference(vec_index) = this->m_value_[vec_index] - vec.m_value_[vec_index];
+            difference(vec_index) = this->m_value_[vec_index] - vec[vec_index];
         }
         return difference;
 
@@ -91,19 +91,19 @@ namespace linear_algebra_operations
     {
         for(int vec_index = 0; vec_index < vec.GetVectorSize();vec_index++)
         {
-            this->m_value_[vec_index] -= vec.m_value_[vec_index];
+            this->m_value_[vec_index] -= vec[vec_index];
         }
         return *this;
     }
 
     template<typename T>
-    int Vector<T>::DotProduct(const Vector<T>& vec_b)
+    T Vector<T>::DotProduct(const Vector<T>& vec_b)
     {
-        int dot_product = 0 ;
+        T dot_product = 0 ;
 
         for(int vec_index = 0 ; vec_index < vec_b.GetVectorSize();vec_index++)
         {
-            dot_product += this->m_value_[vec_index] * vec_b.m_value_[vec_index];
+            dot_product += this->m_value_[vec_index] * vec_b[vec_index];
         }
         return dot_product;
     }
@@ -114,7 +114,7 @@ namespace linear_algebra_operations
         Vector<T> scaled(vec_size_,0);;
         for(int vec_index =0 ; vec_index < vec_size_;vec_index++)
         {
-            scaled(vec_index) = this->m_value_[vec_index] * rhs;
+            scaled[vec_index] = this->m_value_[vec_index] * rhs;
         }
         return scaled;
     }
@@ -130,7 +130,7 @@ namespace linear_algebra_operations
     }
 
     template<typename T>
-    int& Vector<T>::operator()(const int& index) 
+    T& Vector<T>::operator()(const int& index) 
     {
         return m_value_.at(index);
     }
@@ -149,13 +149,23 @@ namespace linear_algebra_operations
         {
             for(int col_index = 0; col_index < mat.GetColumnSize();col_index++ )
             {
-                result(row_index)  += mat(row_index,col_index) * m_value_[col_index];
+                result[row_index]  += mat(row_index,col_index) * m_value_[col_index];
             }
         }
         return result;
     }
 
+    template<typename T>
+    T&  Vector<T>::operator[](const int& index)
+    {
+        return m_value_.at(index);
+    }
 
+    template<typename T>
+    T  Vector<T>::operator[](const int& index) const
+    {
+        return m_value_.at(index);
+    }
 
 }//end of namespace
 

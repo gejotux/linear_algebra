@@ -3,6 +3,7 @@
 
 #include <matrix.h>
 
+
 namespace linear_algebra_operations
 {
     template<typename T>
@@ -257,8 +258,26 @@ namespace linear_algebra_operations
         }
         return *this;
     }
+    template<typename T>
+    Vector<T> Matrix<T>::Multiply(const Vector<T>& vec)
+    {
+        Vector<T> result(vec.GetVectorSize(),0);
 
-    
+        /*if(vec_size_ != mat.GetColumnSize())
+        {
+            throw IncomaptibleSizeException();
+        }*/
+
+        for(int row_index = 0;row_index < num_rows_;row_index++)
+        {
+            for(int col_index = 0; col_index < num_columns_;col_index++ )
+            {
+                result(row_index)  += this->m_values_[row_index][col_index]* vec[col_index];
+            }
+        }
+        return result;
+    } 
+
 
 }
 

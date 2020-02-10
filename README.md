@@ -33,5 +33,5 @@ Vector class
 ------------
 1. m x 1
 2. data types supported
-3. Vector and scalar multiplication
+3. Vector and scalar multiplication,
 4. Storage : std::vector

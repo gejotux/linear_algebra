@@ -4,11 +4,10 @@
 #include <tuple>
 #include <iostream>
 #include <vector>
+#include "noncompatible_dimension_exception.h"
 
 namespace linear_algebra_operations
 {
-
-
 
 template <typename T>
 using Array2D = std::vector<std::vector<T> >;
@@ -49,7 +48,7 @@ public:
     Matrix<T>& operator+=(const T& rhs);   
     Matrix<T>& operator-=(const T& rhs); 
     
-    //Vector Multiply(const Vector& vec);  
+    Vector<T> Multiply(const Vector<T>& vec);  
 
     int GetRowSize() const{return num_rows_;}
     int GetColumnSize() const {return num_columns_;}

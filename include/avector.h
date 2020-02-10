@@ -5,19 +5,11 @@
 #include <iostream>
 #include <vector>
 #include "matrix.h"
-#include <exception>
+#include "noncompatible_dimension_exception.h"
+
 
 namespace linear_algebra_operations
 {
-
-    class IncomaptibleSizeException: public std::exception
-    {
-        public:
-        virtual const char* what() const throw()
-        {
-            return "IncomaptibleSizeException: \ntrying to multiple vector/matrix of incompatible dimensions";
-        }
-    };
     template <typename T>
     using Array1D = std::vector<T>;
 
@@ -40,10 +32,12 @@ namespace linear_algebra_operations
             Vector<T> operator*(T rhs);
             Vector<T>& operator*=(T rhs);
 
-            int& operator()(const int& index);
+            T& operator()(const int& index) ;
+            T& operator[](const int& index);
+            T operator[](const int& index) const;
             bool operator==(const Vector<T>& vec) const;
             
-            int DotProduct(const Vector<T>& vec_b);
+            T DotProduct(const Vector<T>& vec_b);
             int GetVectorSize()const {return vec_size_;}
 
             Vector<T> Multiply(const Matrix<T>& mat);

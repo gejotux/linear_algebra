@@ -35,6 +35,8 @@ matrix.h
 -
 memory
 -
+avector.h
+-
 
 include/avector.h
 string
@@ -47,8 +49,8 @@ vector
 -
 matrix.h
 include/matrix.h
-exception
--
+noncompatible_dimension_exception.h
+include/noncompatible_dimension_exception.h
 avector.cpp
 -
 
@@ -61,7 +63,13 @@ iostream
 -
 vector
 -
+noncompatible_dimension_exception.h
+include/noncompatible_dimension_exception.h
 matrix.cpp
+-
+
+include/noncompatible_dimension_exception.h
+exception
 -
 
 src/avector.cpp
