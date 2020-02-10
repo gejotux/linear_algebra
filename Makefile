@@ -123,6 +123,33 @@ runTests/fast:
 	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/build
 .PHONY : runTests/fast
 
+src/avector.o: src/avector.cpp.o
+
+.PHONY : src/avector.o
+
+# target to build an object file
+src/avector.cpp.o:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/src/avector.cpp.o
+.PHONY : src/avector.cpp.o
+
+src/avector.i: src/avector.cpp.i
+
+.PHONY : src/avector.i
+
+# target to preprocess a source file
+src/avector.cpp.i:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/src/avector.cpp.i
+.PHONY : src/avector.cpp.i
+
+src/avector.s: src/avector.cpp.s
+
+.PHONY : src/avector.s
+
+# target to generate assembly for a file
+src/avector.cpp.s:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/src/avector.cpp.s
+.PHONY : src/avector.cpp.s
+
 src/matrix.o: src/matrix.cpp.o
 
 .PHONY : src/matrix.o
@@ -149,6 +176,33 @@ src/matrix.s: src/matrix.cpp.s
 src/matrix.cpp.s:
 	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/src/matrix.cpp.s
 .PHONY : src/matrix.cpp.s
+
+test/avector_test.o: test/avector_test.cpp.o
+
+.PHONY : test/avector_test.o
+
+# target to build an object file
+test/avector_test.cpp.o:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/test/avector_test.cpp.o
+.PHONY : test/avector_test.cpp.o
+
+test/avector_test.i: test/avector_test.cpp.i
+
+.PHONY : test/avector_test.i
+
+# target to preprocess a source file
+test/avector_test.cpp.i:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/test/avector_test.cpp.i
+.PHONY : test/avector_test.cpp.i
+
+test/avector_test.s: test/avector_test.cpp.s
+
+.PHONY : test/avector_test.s
+
+# target to generate assembly for a file
+test/avector_test.cpp.s:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/test/avector_test.cpp.s
+.PHONY : test/avector_test.cpp.s
 
 test/matrix_test.o: test/matrix_test.cpp.o
 
@@ -186,9 +240,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... runTests"
 	@echo "... edit_cache"
+	@echo "... src/avector.o"
+	@echo "... src/avector.i"
+	@echo "... src/avector.s"
 	@echo "... src/matrix.o"
 	@echo "... src/matrix.i"
 	@echo "... src/matrix.s"
+	@echo "... test/avector_test.o"
+	@echo "... test/avector_test.i"
+	@echo "... test/avector_test.s"
 	@echo "... test/matrix_test.o"
 	@echo "... test/matrix_test.i"
 	@echo "... test/matrix_test.s"

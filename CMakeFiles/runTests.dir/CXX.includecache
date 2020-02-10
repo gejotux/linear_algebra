@@ -6,8 +6,24 @@
 
 #IncludeRegexTransform: 
 
+/home/rockerz/gejo/atlatec/git/linear_algebra/src/avector.cpp
+avector.h
+-
+algorithm
+-
+iterator
+-
+
 /home/rockerz/gejo/atlatec/git/linear_algebra/src/matrix.cpp
 matrix.h
+-
+
+/home/rockerz/gejo/atlatec/git/linear_algebra/test/avector_test.cpp
+gtest/gtest.h
+-
+limits
+-
+avector.h
 -
 
 /home/rockerz/gejo/atlatec/git/linear_algebra/test/matrix_test.cpp
@@ -18,6 +34,16 @@ limits
 matrix.h
 -
 memory
+-
+
+include/avector.h
+string
+-
+tuple
+-
+iostream
+-
+vector
 -
 
 include/matrix.h
