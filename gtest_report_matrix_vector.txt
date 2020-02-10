@@ -1,0 +1,114 @@
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/rockerz/gejo/atlatec/git/linear_algebra
+[ 20%] Linking CXX executable runTests
+[100%] Built target runTests
+[==========] Running 49 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 36 tests from MatrixTest
+[ RUN      ] MatrixTest.Populate_2x2Matrix_InitialValueTest
+[       OK ] MatrixTest.Populate_2x2Matrix_InitialValueTest (0 ms)
+[ RUN      ] MatrixTest.Populate_2x2Matrix_DifferentInitialValue
+[       OK ] MatrixTest.Populate_2x2Matrix_DifferentInitialValue (0 ms)
+[ RUN      ] MatrixTest.Populate_3x3Matrix_SameInitialValue_Test
+[       OK ] MatrixTest.Populate_3x3Matrix_SameInitialValue_Test (0 ms)
+[ RUN      ] MatrixTest.Populate_3x3Matrix_DifferentInitialValue
+[       OK ] MatrixTest.Populate_3x3Matrix_DifferentInitialValue (1 ms)
+[ RUN      ] MatrixTest.CopyConstructor_2x2Matrix_Test
+[       OK ] MatrixTest.CopyConstructor_2x2Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.CopyConstructor_3x3Matrix_Test
+[       OK ] MatrixTest.CopyConstructor_3x3Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.CopyConstructor_4x4Matrix_Test
+[       OK ] MatrixTest.CopyConstructor_4x4Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.Assignment_2x2Matrix_Test
+[       OK ] MatrixTest.Assignment_2x2Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.Assignment_3x3Matrix_Test
+[       OK ] MatrixTest.Assignment_3x3Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.Assignment_4x4Matrix_Test
+[       OK ] MatrixTest.Assignment_4x4Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.Addition_2x2Matrix_Test
+[       OK ] MatrixTest.Addition_2x2Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.Addition_3x3Matrix_Test
+[       OK ] MatrixTest.Addition_3x3Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.Addition_2x2Matrix_Float_Test
+[       OK ] MatrixTest.Addition_2x2Matrix_Float_Test (0 ms)
+[ RUN      ] MatrixTest.Addition_3x3Matrix_Float_Test
+[       OK ] MatrixTest.Addition_3x3Matrix_Float_Test (0 ms)
+[ RUN      ] MatrixTest.Addition_4x4Matrix_Test
+[       OK ] MatrixTest.Addition_4x4Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.Cumulative_Addition_2x2Matrix_Test
+[       OK ] MatrixTest.Cumulative_Addition_2x2Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.Cumulative_Addition_3x3Matrix_Test
+[       OK ] MatrixTest.Cumulative_Addition_3x3Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.Cumulative_Addition_4x4Matrix_Test
+[       OK ] MatrixTest.Cumulative_Addition_4x4Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.Subtraction_2x2Matrix_Test
+[       OK ] MatrixTest.Subtraction_2x2Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.Subtraction_3x3Matrix_Test
+[       OK ] MatrixTest.Subtraction_3x3Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.Subtraction_4x4Matrix_Test
+[       OK ] MatrixTest.Subtraction_4x4Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.Cumulative_Subtraction_2x2Matrix_Test
+[       OK ] MatrixTest.Cumulative_Subtraction_2x2Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.Cumulative_Subtraction_3x3Matrix_Test
+[       OK ] MatrixTest.Cumulative_Subtraction_3x3Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.Cumulative_Subtraction_4x4Matrix_Test
+[       OK ] MatrixTest.Cumulative_Subtraction_4x4Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.Multiplication_2x2Matrix_Test
+[       OK ] MatrixTest.Multiplication_2x2Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.Multiplication_3x3Matrix_Test
+[       OK ] MatrixTest.Multiplication_3x3Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.Multiplication_3x3Matrix_Float_Test
+[       OK ] MatrixTest.Multiplication_3x3Matrix_Float_Test (0 ms)
+[ RUN      ] MatrixTest.CumulativeMultiplication_2x2Matrix_Test
+[       OK ] MatrixTest.CumulativeMultiplication_2x2Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.CumulativeMultiplication_3x3Matrix_Test
+[       OK ] MatrixTest.CumulativeMultiplication_3x3Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.ScalarAddition_3x3Matrix_Test
+[       OK ] MatrixTest.ScalarAddition_3x3Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.CumulativeScalarAddition_3x3Matrix_Test
+[       OK ] MatrixTest.CumulativeScalarAddition_3x3Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.ScalarSubtraction_3x3Matrix_Test
+[       OK ] MatrixTest.ScalarSubtraction_3x3Matrix_Test (1 ms)
+[ RUN      ] MatrixTest.CumulativeScalarSubtraction_3x3Matrix_Test
+[       OK ] MatrixTest.CumulativeScalarSubtraction_3x3Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.Product_Scalar_3x3Matrix_Test
+[       OK ] MatrixTest.Product_Scalar_3x3Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.Cumulative_Product_Scalar_3x3Matrix_Test
+[       OK ] MatrixTest.Cumulative_Product_Scalar_3x3Matrix_Test (0 ms)
+[ RUN      ] MatrixTest.Matrix_Vector_Multiplication_3x3Matrix_Test
+[       OK ] MatrixTest.Matrix_Vector_Multiplication_3x3Matrix_Test (0 ms)
+[----------] 36 tests from MatrixTest (2 ms total)
+
+[----------] 13 tests from VectorTest
+[ RUN      ] VectorTest.Vector_Constructor_Test
+[       OK ] VectorTest.Vector_Constructor_Test (0 ms)
+[ RUN      ] VectorTest.Vector_Copy_Constructor_Test
+[       OK ] VectorTest.Vector_Copy_Constructor_Test (0 ms)
+[ RUN      ] VectorTest.Vector_Copy_Assignment_Test
+[       OK ] VectorTest.Vector_Copy_Assignment_Test (0 ms)
+[ RUN      ] VectorTest.Vector_Move_Constructor_Test
+[       OK ] VectorTest.Vector_Move_Constructor_Test (0 ms)
+[ RUN      ] VectorTest.Vector_Move_Assignment_Test
+[       OK ] VectorTest.Vector_Move_Assignment_Test (0 ms)
+[ RUN      ] VectorTest.Vector_Addition_Operator_Test
+[       OK ] VectorTest.Vector_Addition_Operator_Test (0 ms)
+[ RUN      ] VectorTest.Vector_Cumulative_Addition_Operator_Test
+[       OK ] VectorTest.Vector_Cumulative_Addition_Operator_Test (0 ms)
+[ RUN      ] VectorTest.Vector_Subtaction_Operator_Test
+[       OK ] VectorTest.Vector_Subtaction_Operator_Test (0 ms)
+[ RUN      ] VectorTest.Vector_Cumulative_Subtaction_Operator_Test
+[       OK ] VectorTest.Vector_Cumulative_Subtaction_Operator_Test (0 ms)
+[ RUN      ] VectorTest.Vector_DotProduct_Test
+[       OK ] VectorTest.Vector_DotProduct_Test (0 ms)
+[ RUN      ] VectorTest.Vector_ScalarMultiplication_Test
+[       OK ] VectorTest.Vector_ScalarMultiplication_Test (0 ms)
+[ RUN      ] VectorTest.Vector_Cumulative_ScalarMultiplication_Test
+[       OK ] VectorTest.Vector_Cumulative_ScalarMultiplication_Test (0 ms)
+[ RUN      ] VectorTest.Vector_Matrix_Multiplication_Test
+[       OK ] VectorTest.Vector_Matrix_Multiplication_Test (0 ms)
+[----------] 13 tests from VectorTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 49 tests from 2 test suites ran. (2 ms total)
+[  PASSED  ] 49 tests.

@@ -173,11 +173,4 @@ TEST(VectorTest,Vector_Matrix_Multiplication_Test)
 }
 
 
-
-
-
-
-
-
-
 }

@@ -73,8 +73,7 @@ namespace linear_algebra_operations
     template<typename T>
     Vector<T>& Vector<T>::operator=(const Vector<T>& rhs)
     {
-        //std::swap(this->m_value_,rhs.m_value_);
-        
+       
         if(this == &rhs)
         {
             return *this;

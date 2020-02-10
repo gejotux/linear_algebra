@@ -8,7 +8,7 @@
 namespace linear_algebra_operations
 {
 
-TEST(MatrixTest, Populate_2x2Matrix_SameInitialValue_1)
+TEST(MatrixTest, Populate_2x2Matrix_InitialValueTest)
 {
     Matrix<int> mat(2,2,1);
     Array2D<int> arr{{1,1},{1,1}};
@@ -29,7 +29,7 @@ TEST(MatrixTest, Populate_2x2Matrix_DifferentInitialValue)
 }
 
 
-TEST(MatrixTest, Populate_3x3Matrix_SameInitialValue_1)
+TEST(MatrixTest, Populate_3x3Matrix_SameInitialValue_Test)
 {
     Matrix<int> mat(3,3,1);
     Array2D<int> arr{{1,1,1},{1,1,1},{1,1,1}};
@@ -205,27 +205,6 @@ TEST(MatrixTest, Cumulative_Addition_4x4Matrix_Test)
     EXPECT_EQ(matC,sum); 
 }
 
-TEST(MatrixTest, Cumulative_Addition_4x4Matrix_Double_Test)
-{
-    Matrix<double> matA(4,4,1.1);
-    Matrix<double> matB(4,4,3.2);
-    Matrix<double> matC(4,4,4.3);
-    
-    Matrix<double> sum(4,4,0.0);
-    sum += matA; 
-    sum += matB; 
-
-    for(int i = 0 ; i < sum.GetRowSize();i++)
-    {
-        for(int j =0 ; j < sum.GetColumnSize();j++)
-        {
-          //  std::cout << sum.m_values_[i][j] << " ";
-        }
-        //std::cout << std::endl;
-    }
-    //EXPECT_NEAR(sum,matC,0.01);
-
-}
 
 
 TEST(MatrixTest, Subtraction_2x2Matrix_Test)
