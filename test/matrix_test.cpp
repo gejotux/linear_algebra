@@ -1,5 +1,4 @@
 #include <gtest/gtest.h>
-#define private public
 #include <limits>
 #include <matrix.h>
 #include <memory>

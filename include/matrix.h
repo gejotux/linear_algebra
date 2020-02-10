@@ -21,25 +21,25 @@ class Matrix
 
   
 public:
-    Matrix(){}
+    Matrix() = default;
     Matrix(int num_rows,int num_columns,T initial_value);
     virtual ~Matrix() = default;
     Matrix(Array2D<T>& arr);
-    Matrix(const Matrix& mat);  //done
-    Matrix<T>& operator=(const Matrix<T> &rhs) const ; //done
-    Matrix<T>& operator=(const Matrix<T> &rhs) ; //done
+    Matrix(const Matrix& mat);  
+    Matrix<T>& operator=(const Matrix<T> &rhs) const ; 
+    Matrix<T>& operator=(const Matrix<T> &rhs) ; 
 
-    bool operator==(const Matrix<T> &rhs) const;  //done
-    bool operator!=(const Matrix<T> &rhs) const;  //done
-    Matrix<T> operator-(const Matrix<T> &rhs) ; //done
-    Matrix<T>& operator-=(const Matrix<T> &rhs); //done
-    Matrix<T> operator+(const Matrix<T> &rhs);  //done
-    Matrix<T>& operator+=(const Matrix<T> &rhs); //done
-    Matrix<T> operator*(const Matrix<T>& rhs); //done
-    Matrix<T>& operator*=(const Matrix<T> &rhs); //done
+    bool operator==(const Matrix<T> &rhs) const;  
+    bool operator!=(const Matrix<T> &rhs) const;  
+    Matrix<T> operator-(const Matrix<T> &rhs) ; 
+    Matrix<T>& operator-=(const Matrix<T> &rhs); 
+    Matrix<T> operator+(const Matrix<T> &rhs);  
+    Matrix<T>& operator+=(const Matrix<T> &rhs); 
+    Matrix<T> operator*(const Matrix<T>& rhs); 
+    Matrix<T>& operator*=(const Matrix<T> &rhs); 
 
-    const T& operator()(const int& row,const int& column) const;  //done
-    T& operator()(const int& row,const int& column); //done
+    const T& operator()(const int& row,const int& column) const;  
+    T& operator()(const int& row,const int& column); 
 
     Matrix<T> operator*(const T& rhs); 
     Matrix<T> operator-(const T& rhs);

@@ -17,10 +17,17 @@ namespace linear_algebra_operations
     class Vector
     {
         public:
-            Vector(){}
+            Vector() = default; 
             Vector(const Array1D<T>& array_1d);
             Vector(const int dimension,T initial_value);
             Vector(const Vector<T>& vec);
+            Vector(Vector<T>&& vec);
+            
+            Vector<T>& operator=(Vector<T>&& vec);
+            Vector<T>& operator=(Vector<T>&& vec) const;
+
+            virtual ~Vector() = default;
+
             Vector<T>& operator=(const Vector<T>& vec);
             Vector<T>& operator=(const Vector<T>& vec) const;
 

@@ -1,5 +1,4 @@
 #include <gtest/gtest.h>
-#define private public
 #include <limits>
 #include <avector.h>
 
@@ -26,6 +25,44 @@ TEST(VectorTest,Vector_Copy_Constructor_Test)
     Vector<int> to_compare(arr);
     EXPECT_EQ(copied_vec_obj,to_compare);
 }
+
+TEST(VectorTest,Vector_Copy_Assignment_Test)
+{
+    Vector<int> vec(3,2);
+
+    Vector<int> copied_vec_obj ;
+    copied_vec_obj = vec;
+
+    Array1D<int> arr{2,2,2};
+    Vector<int> to_compare(arr);
+    EXPECT_EQ(copied_vec_obj,to_compare);
+}
+
+
+TEST(VectorTest,Vector_Move_Constructor_Test)
+{
+    Vector<int> vec(3,2);
+
+    Vector<int> copied_vec_obj(std::move(vec));
+
+    Array1D<int> arr{2,2,2};
+    Vector<int> to_compare(arr);
+    EXPECT_EQ(copied_vec_obj,to_compare);
+}
+
+TEST(VectorTest,Vector_Move_Assignment_Test)
+{
+    Vector<int> vec(3,2);
+
+    Vector<int> copied_vec_obj;
+    copied_vec_obj = std::move(vec);
+
+    Array1D<int> arr{2,2,2};
+    Vector<int> to_compare(arr);
+    EXPECT_EQ(copied_vec_obj,to_compare);
+}
+
+
 
 TEST(VectorTest,Vector_Addition_Operator_Test)
 {

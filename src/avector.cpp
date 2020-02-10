@@ -32,6 +32,45 @@ namespace linear_algebra_operations
     }
 
     template<typename T>
+    Vector<T>::Vector(Vector<T>&& vec):m_value_{},vec_size_{0}
+    {
+        m_value_ = vec.m_value_;
+        vec_size_ = vec.vec_size_;
+
+        vec.vec_size_ = 0;
+        vec.m_value_.clear();
+
+    }
+
+    template<typename T>
+    Vector<T>& Vector<T>::operator=(Vector<T>&& vec)
+    {
+        if(this != &vec)
+        {
+            m_value_.clear();
+            std::copy(std::cbegin(vec.m_value_),
+                      std::cend(vec.m_value_),std::back_inserter(m_value_));
+            vec_size_ = vec.vec_size_;
+        }
+        return *this;
+    }
+
+    template<typename T>
+    Vector<T>& Vector<T>::operator=(Vector<T>&& vec) const
+    {
+        if(this != &vec)
+        {
+            m_value_.clear();
+            std::copy(std::cbegin(vec.m_value_),
+                      std::cend(vec.m_value_),std::back_inserter(m_value_));
+            vec_size_ = vec.vec_size_;
+        }
+        return *this;
+    }
+
+
+
+    template<typename T>
     Vector<T>& Vector<T>::operator=(const Vector<T>& rhs)
     {
         //std::swap(this->m_value_,rhs.m_value_);
