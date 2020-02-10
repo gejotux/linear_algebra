@@ -1,20 +1,22 @@
+#ifndef MATRIX_CPP_
+#define MATRIX_CPP_
 
 #include <matrix.h>
 
 namespace linear_algebra_operations
 {
-
-    Matrix::Matrix(int num_rows,int num_columns,int initial_value):
+    template<typename T>
+    Matrix<T>::Matrix(int num_rows,int num_columns,T initial_value):
                 num_rows_{num_rows},num_columns_{num_columns}
     {   
          m_values_.resize(num_rows);
          for(int row_index = 0; row_index < num_rows;row_index++)
          {
-                 m_values_[row_index].resize(num_columns,initial_value);
+              m_values_[row_index].resize(num_columns,initial_value);
          }
     }
-
-    Matrix::Matrix(Array2D& array_2d)
+    template<typename T>
+    Matrix<T>::Matrix(Array2D<T>& array_2d)
     {   
          m_values_.resize(array_2d.size());
          for(int row_index = 0; row_index < array_2d.size();row_index++)
@@ -27,28 +29,28 @@ namespace linear_algebra_operations
          num_rows_ = array_2d.size();
          num_columns_ = array_2d.at(0).size();
     }
-
-    Matrix::Matrix(const Matrix& mat)
+    template<typename T>
+    Matrix<T>::Matrix(const Matrix<T>& mat)
     {
         m_values_ = mat.m_values_;
         num_columns_ = mat.GetColumnSize();
         num_rows_ = mat.GetRowSize();
     }
-
-    const int& Matrix::operator()(const int& row,const int& column) const
+    template<typename T>
+    const T& Matrix<T>::operator()(const int& row,const int& column) const
+    {
+        return m_values_.at(row).at(column);
+    }
+    template<typename T>
+    T& Matrix<T>::operator()(const int& row,const int& column) 
     {
         return m_values_.at(row).at(column);
     }
 
-    int& Matrix::operator()(const int& row,const int& column) 
+    template<typename T>
+    Matrix<T> Matrix<T>::operator+(const Matrix<T> &rhs)
     {
-        return m_values_.at(row).at(column);
-    }
-
-
-    Matrix Matrix::operator+(const Matrix &rhs)
-    {
-        Matrix result(num_rows_,num_columns_,0);
+        Matrix<T> result(num_rows_,num_columns_,0);
 
         for(int row_index = 0 ; row_index < num_rows_ ; row_index++)
         {
@@ -61,8 +63,8 @@ namespace linear_algebra_operations
         return result;
 
     }
-
-    Matrix& Matrix::operator+=(const Matrix &rhs)
+    template<typename T>
+    Matrix<T>& Matrix<T>::operator+=(const Matrix<T> &rhs)
     {
         for(int row_index = 0 ; row_index < num_rows_ ; row_index++)
         {
@@ -73,10 +75,10 @@ namespace linear_algebra_operations
         }
         return *this;
     }  
-
-    Matrix Matrix::operator-(const Matrix &rhs)
+    template<typename T>
+    Matrix<T> Matrix<T>::operator-(const Matrix<T> &rhs)
     {
-        Matrix result(num_rows_,num_columns_,0);
+        Matrix<T> result(num_rows_,num_columns_,0);
 
         for(int row_index = 0 ; row_index < num_rows_ ; row_index++)
         {
@@ -87,10 +89,10 @@ namespace linear_algebra_operations
             }
         }
         return result;
-
     }
 
-    Matrix& Matrix::operator-=(const Matrix &rhs)
+    template<typename T>
+    Matrix<T>& Matrix<T>::operator-=(const Matrix<T> &rhs)
     {
         for(int row_index = 0 ; row_index < num_rows_ ; row_index++)
         {
@@ -101,13 +103,14 @@ namespace linear_algebra_operations
         }
         return *this;
     }  
-
-    Matrix Matrix::operator*(const Matrix& rhs)
+    
+    template<typename T>
+    Matrix<T> Matrix<T>::operator*(const Matrix<T>& rhs)
     {
 
         unsigned rhs_rows = rhs.GetRowSize();
         unsigned rhs_cols = rhs.GetColumnSize();
-        Matrix product(rhs_rows, rhs_rows, 0.0);
+        Matrix<T> product(rhs_rows, rhs_rows, 0.0);
 
         for (unsigned i=0; i<rhs_rows; i++) 
         {
@@ -122,16 +125,17 @@ namespace linear_algebra_operations
          return product;
     }
 
-    Matrix& Matrix::operator*=(const Matrix& rhs)
+    template<typename T>
+    Matrix<T>& Matrix<T>::operator*=(const Matrix<T>& rhs)
     {
-        Matrix temp = (*this) * rhs;
+        Matrix<T> temp = (*this) * rhs;
         *this = temp;
         return *this;
 
     }
 
-
-    Matrix& Matrix::operator=(const Matrix& rhs) 
+    template<typename T>
+    Matrix<T>& Matrix<T>::operator=(const Matrix<T>& rhs) 
     {
         if(this == &rhs)
         {
@@ -158,8 +162,8 @@ namespace linear_algebra_operations
 
         return *this;
     } 
-
-    bool Matrix::operator==(const Matrix &rhs) const
+    template<typename T>
+    bool Matrix<T>::operator==(const Matrix<T> &rhs) const
     {
         bool result = false;
 
@@ -170,32 +174,16 @@ namespace linear_algebra_operations
         return result;
 
     }
-
-    bool Matrix::operator!=(const Matrix &rhs) const
+    template<typename T>
+    bool Matrix<T>::operator!=(const Matrix<T> &rhs) const
     {
         return !(*this == rhs);
     }
 
-
-
-
-    std::ostream &operator<<(std::ostream &os, const Matrix &mat) 
+    template<typename T>
+    Matrix<T> Matrix<T>::operator+(const T& rhs) 
     {
-        for(int row_index = 0 ; row_index < mat.GetRowSize() ; row_index++)
-        {
-            for(int column_index = 0; column_index < mat.GetColumnSize();column_index++)
-            {
-                os << mat.m_values_[row_index][column_index] << " " ;
-            }
-            os << std::endl;
-        }
-        
-        return os;
-    }
-
-    Matrix Matrix::operator+(const int& rhs) 
-    {
-        Matrix sum(num_rows_,num_columns_,0);
+        Matrix<T> sum(num_rows_,num_columns_,0);
         for(int row_index = 0 ; row_index < num_rows_ ; row_index++)
         {
             for(int column_index = 0; column_index < num_columns_;column_index++)
@@ -206,10 +194,10 @@ namespace linear_algebra_operations
         }
         return sum;
     }
-
-    Matrix Matrix::operator-(const int& rhs)
+    template<typename T>
+    Matrix<T> Matrix<T>::operator-(const T& rhs)
     {
-        Matrix difference(num_rows_,num_columns_,0);
+        Matrix<T> difference(num_rows_,num_columns_,0);
         for(int row_index = 0 ; row_index < num_rows_ ; row_index++)
         {
             for(int column_index = 0; column_index < num_columns_;column_index++)
@@ -220,8 +208,8 @@ namespace linear_algebra_operations
         }
         return difference;
     }
-
-    Matrix& Matrix::operator+=(const int& rhs)
+    template<typename T>
+    Matrix<T>& Matrix<T>::operator+=(const T& rhs)
     {
         for(int row_index = 0 ; row_index < num_rows_ ; row_index++)
         {
@@ -232,8 +220,8 @@ namespace linear_algebra_operations
         }
         return *this;
     }
-
-    Matrix& Matrix::operator-=(const int& rhs)
+    template<typename T>
+    Matrix<T>& Matrix<T>::operator-=(const T& rhs)
     {
         for(int row_index = 0 ; row_index < num_rows_ ; row_index++)
         {
@@ -244,10 +232,10 @@ namespace linear_algebra_operations
         }
         return *this;
     }
-
-    Matrix Matrix::operator*(const int& rhs)
+    template<typename T>
+    Matrix<T> Matrix<T>::operator*(const T& rhs)
     {
-        Matrix scalar_product(num_rows_,num_columns_,0);
+        Matrix<T> scalar_product(num_rows_,num_columns_,0);
         for(int row_index = 0 ; row_index < num_rows_ ; row_index++)
         {
             for(int column_index = 0; column_index < num_columns_;column_index++)
@@ -257,8 +245,8 @@ namespace linear_algebra_operations
         }
         return scalar_product;
     }
-
-    Matrix& Matrix::operator*=(const int& rhs)
+    template<typename T>
+    Matrix<T>& Matrix<T>::operator*=(const T& rhs)
     {
         for(int row_index = 0 ; row_index < num_rows_ ; row_index++)
         {
@@ -271,3 +259,5 @@ namespace linear_algebra_operations
     }
 
 }
+
+#endif

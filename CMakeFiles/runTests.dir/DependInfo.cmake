@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/rockerz/gejo/atlatec/programming_task/src/matrix.cpp" "/home/rockerz/gejo/atlatec/programming_task/CMakeFiles/runTests.dir/src/matrix.cpp.o"
-  "/home/rockerz/gejo/atlatec/programming_task/test/matrix_test.cpp" "/home/rockerz/gejo/atlatec/programming_task/CMakeFiles/runTests.dir/test/matrix_test.cpp.o"
+  "/home/rockerz/gejo/atlatec/git/linear_algebra/src/matrix.cpp" "/home/rockerz/gejo/atlatec/git/linear_algebra/CMakeFiles/runTests.dir/src/matrix.cpp.o"
+  "/home/rockerz/gejo/atlatec/git/linear_algebra/test/matrix_test.cpp" "/home/rockerz/gejo/atlatec/git/linear_algebra/CMakeFiles/runTests.dir/test/matrix_test.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

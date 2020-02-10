@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/rockerz/gejo/atlatec/programming_task/src -I/home/rockerz/gejo/atlatec/programming_task/include 
+CXX_INCLUDES = -I/home/rockerz/gejo/atlatec/git/linear_algebra/src -I/home/rockerz/gejo/atlatec/git/linear_algebra/include 
 

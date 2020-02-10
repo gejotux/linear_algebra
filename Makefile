@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rockerz/gejo/atlatec/programming_task
+CMAKE_SOURCE_DIR = /home/rockerz/gejo/atlatec/git/linear_algebra
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rockerz/gejo/atlatec/programming_task
+CMAKE_BINARY_DIR = /home/rockerz/gejo/atlatec/git/linear_algebra
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rockerz/gejo/atlatec/programming_task/CMakeFiles /home/rockerz/gejo/atlatec/programming_task/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rockerz/gejo/atlatec/git/linear_algebra/CMakeFiles /home/rockerz/gejo/atlatec/git/linear_algebra/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rockerz/gejo/atlatec/programming_task/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rockerz/gejo/atlatec/git/linear_algebra/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

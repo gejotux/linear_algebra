@@ -15,15 +15,14 @@ namespace linear_algebra_operations
             virtual ~MatrixTest(){}
             void SetUp()
             {
-                matrix_ = std::make_unique<Matrix>();
+                matrix_ = std::make_unique<Matrix<int>>();
             }
             void TearDown()
             {
                 matrix_.reset();
             }
-        std::unique_ptr<Matrix> matrix_;
+        std::unique_ptr<Matrix<int>> matrix_;
     };
-using Array2D = std::vector<std::vector<int> >;
 TEST_F(MatrixTest, Create_Instance_Test)
 {
     EXPECT_NE(nullptr, matrix_);
@@ -31,9 +30,9 @@ TEST_F(MatrixTest, Create_Instance_Test)
 
 TEST_F(MatrixTest, Populate_2x2Matrix_SameInitialValue_1)
 {
-    Matrix mat(2,2,1);
-    Array2D arr{{1,1},{1,1}};
-    Matrix mat_to_compare(arr);
+    Matrix<int> mat(2,2,1);
+    Array2D<int> arr{{1,1},{1,1}};
+    Matrix<int> mat_to_compare(arr);
 
     EXPECT_EQ(mat,mat_to_compare);
        
@@ -41,9 +40,9 @@ TEST_F(MatrixTest, Populate_2x2Matrix_SameInitialValue_1)
 
 TEST_F(MatrixTest, Populate_2x2Matrix_DifferentInitialValue)
 {
-    Matrix mat(2,2,1);
-    Array2D arr{{1,2},{1,1}};
-    Matrix mat_to_compare(arr);
+    Matrix<int> mat(2,2,1);
+    Array2D<int> arr{{1,2},{1,1}};
+    Matrix<int> mat_to_compare(arr);
 
     EXPECT_NE(mat,mat_to_compare);
        
@@ -52,9 +51,9 @@ TEST_F(MatrixTest, Populate_2x2Matrix_DifferentInitialValue)
 
 TEST_F(MatrixTest, Populate_3x3Matrix_SameInitialValue_1)
 {
-    Matrix mat(3,3,1);
-    Array2D arr{{1,1,1},{1,1,1},{1,1,1}};
-    Matrix mat_to_compare(arr);
+    Matrix<int> mat(3,3,1);
+    Array2D<int> arr{{1,1,1},{1,1,1},{1,1,1}};
+    Matrix<int> mat_to_compare(arr);
 
     EXPECT_EQ(mat,mat_to_compare);
        
@@ -63,9 +62,9 @@ TEST_F(MatrixTest, Populate_3x3Matrix_SameInitialValue_1)
 
 TEST_F(MatrixTest, Populate_3x3Matrix_DifferentInitialValue)
 {
-    Matrix mat(3,3,1);
-    Array2D arr{{1,1,2},{1,1,1},{1,1,1}};
-    Matrix mat_to_compare(arr);
+    Matrix<int> mat(3,3,1);
+    Array2D<int> arr{{1,1,2},{1,1,1},{1,1,1}};
+    Matrix<int> mat_to_compare(arr);
 
     EXPECT_NE(mat,mat_to_compare);
        
@@ -73,30 +72,30 @@ TEST_F(MatrixTest, Populate_3x3Matrix_DifferentInitialValue)
 
 TEST_F(MatrixTest, CopyConstructor_2x2Matrix_Test)
 {
-    Matrix mat(2,2,1);
-    Array2D arr{{1,1},{1,1}};
-    Matrix mat_to_compare(arr);
-    Matrix copied_matrix(mat);
+    Matrix<int> mat(2,2,1);
+    Array2D<int> arr{{1,1},{1,1}};
+    Matrix<int> mat_to_compare(arr);
+    Matrix<int> copied_matrix(mat);
 
     EXPECT_EQ(copied_matrix,mat_to_compare); 
 }
 
 TEST_F(MatrixTest, CopyConstructor_3x3Matrix_Test)
 {
-    Matrix mat(3,3,2);
-    Array2D arr{{2,2,2},{2,2,2},{2,2,2}};
-    Matrix mat_to_compare(arr);
-    Matrix copied_matrix(mat);
+    Matrix<int> mat(3,3,2);
+    Array2D<int> arr{{2,2,2},{2,2,2},{2,2,2}};
+    Matrix<int> mat_to_compare(arr);
+    Matrix<int> copied_matrix(mat);
 
     EXPECT_EQ(copied_matrix,mat_to_compare); 
 }
 
 TEST_F(MatrixTest, CopyConstructor_4x4Matrix_Test)
 {
-    Matrix mat(4,4,2);
-    Array2D arr{{2,2,2,2},{2,2,2,2},{2,2,2,2},{2,2,2,2}};
-    Matrix mat_to_compare(arr);
-    Matrix copied_matrix(mat);
+    Matrix<int> mat(4,4,2);
+    Array2D<int> arr{{2,2,2,2},{2,2,2,2},{2,2,2,2},{2,2,2,2}};
+    Matrix<int> mat_to_compare(arr);
+    Matrix<int> copied_matrix(mat);
 
     EXPECT_EQ(copied_matrix,mat_to_compare); 
 }
@@ -104,63 +103,85 @@ TEST_F(MatrixTest, CopyConstructor_4x4Matrix_Test)
 
 TEST_F(MatrixTest, Assignment_2x2Matrix_Test)
 {
-    Matrix mat(2,2,1);
-    Array2D arr{{1,1},{1,1}};
-    Matrix mat_to_compare(arr);
-    Matrix assigned_matrix = mat;
+    Matrix<int> mat(2,2,1);
+    Array2D<int> arr{{1,1},{1,1}};
+    Matrix<int> mat_to_compare(arr);
+    Matrix<int> assigned_matrix = mat;
 
     EXPECT_EQ(assigned_matrix,mat_to_compare); 
 }
 
 TEST_F(MatrixTest, Assignment_3x3Matrix_Test)
 {
-    Matrix mat(3,3,2);
-    Array2D arr{{2,2,2},{2,2,2},{2,2,2}};
-    Matrix mat_to_compare(arr);
-    Matrix assigned_matrix = mat;
+    Matrix<int> mat(3,3,2);
+    Array2D<int> arr{{2,2,2},{2,2,2},{2,2,2}};
+    Matrix<int> mat_to_compare(arr);
+    Matrix<int> assigned_matrix = mat;
 
     EXPECT_EQ(assigned_matrix,mat_to_compare); 
 }
 
 TEST_F(MatrixTest, Assignment_4x4Matrix_Test)
 {
-    Matrix mat(4,4,3);
-    Array2D arr{{3,3,3,3},{3,3,3,3},{3,3,3,3},{3,3,3,3}};
-    Matrix mat_to_compare(arr);
-    Matrix assigned_matrix = mat;
+    Matrix<int> mat(4,4,3);
+    Array2D<int> arr{{3,3,3,3},{3,3,3,3},{3,3,3,3},{3,3,3,3}};
+    Matrix<int> mat_to_compare(arr);
+    Matrix<int> assigned_matrix = mat;
 
     EXPECT_EQ(assigned_matrix,mat_to_compare); 
 }
 
 TEST_F(MatrixTest, Addition_2x2Matrix_Test)
 {
-    Matrix matA(2,2,1);
-    Matrix matB(2,2,3);
-    Matrix matC(2,2,4);
+    Matrix<int> matA(2,2,1);
+    Matrix<int> matB(2,2,3);
+    Matrix<int> matC(2,2,4);
     
-    Matrix sum = matA + matB; 
+    Matrix<int> sum = matA + matB; 
 
     EXPECT_EQ(matC,sum); 
 }
 
 TEST_F(MatrixTest, Addition_3x3Matrix_Test)
 {
-    Matrix matA(3,3,1);
-    Matrix matB(3,3,3);
-    Matrix matC(3,3,4);
+    Matrix<int> matA(3,3,1);
+    Matrix<int> matB(3,3,3);
+    Matrix<int> matC(3,3,4);
     
-    Matrix sum = matA + matB; 
+    Matrix<int> sum = matA + matB; 
+
+    EXPECT_EQ(matC,sum); 
+}
+
+TEST_F(MatrixTest, Addition_2x2Matrix_Float_Test)
+{
+    Matrix<float> matA(2,2,1.0);
+    Matrix<float> matB(2,2,3.1);
+    Matrix<float> matC(2,2,4.1);
+    
+    Matrix<float> sum = matA + matB; 
+
+    EXPECT_EQ(matC,sum); 
+}
+
+TEST_F(MatrixTest, Addition_3x3Matrix_Float_Test)
+{
+    Matrix<float> matA(3,3,1.2);
+    Matrix<float> matB(3,3,3.05);
+    Matrix<float> matC(3,3,4.25);
+    
+    Matrix<float> sum = matA + matB; 
 
     EXPECT_EQ(matC,sum); 
 }
 
 TEST_F(MatrixTest, Addition_4x4Matrix_Test)
 {
-    Matrix matA(4,4,1);
-    Matrix matB(4,4,3);
-    Matrix matC(4,4,4);
+    Matrix<int> matA(4,4,1);
+    Matrix<int> matB(4,4,3);
+    Matrix<int> matC(4,4,4);
     
-    Matrix sum = matA + matB; 
+    Matrix<int> sum = matA + matB; 
 
     EXPECT_EQ(matC,sum); 
 }
@@ -168,11 +189,11 @@ TEST_F(MatrixTest, Addition_4x4Matrix_Test)
 
 TEST_F(MatrixTest, Cumulative_Addition_2x2Matrix_Test)
 {
-    Matrix matA(2,2,1);
-    Matrix matB(2,2,3);
-    Matrix matC(2,2,4);
+    Matrix<int> matA(2,2,1);
+    Matrix<int> matB(2,2,3);
+    Matrix<int> matC(2,2,4);
     
-    Matrix sum(2,2,0);
+    Matrix<int> sum(2,2,0);
     sum += matA; 
     sum += matB;
     EXPECT_EQ(matC,sum); 
@@ -180,11 +201,11 @@ TEST_F(MatrixTest, Cumulative_Addition_2x2Matrix_Test)
 
 TEST_F(MatrixTest, Cumulative_Addition_3x3Matrix_Test)
 {
-    Matrix matA(3,3,1);
-    Matrix matB(3,3,3);
-    Matrix matC(3,3,4);
+    Matrix<int> matA(3,3,1);
+    Matrix<int> matB(3,3,3);
+    Matrix<int> matC(3,3,4);
     
-    Matrix sum(3,3,0);
+    Matrix<int> sum(3,3,0);
     sum += matA; 
     sum += matB; 
 
@@ -193,49 +214,69 @@ TEST_F(MatrixTest, Cumulative_Addition_3x3Matrix_Test)
 
 TEST_F(MatrixTest, Cumulative_Addition_4x4Matrix_Test)
 {
-    Matrix matA(4,4,1);
-    Matrix matB(4,4,3);
-    Matrix matC(4,4,4);
+    Matrix<int> matA(4,4,1);
+    Matrix<int> matB(4,4,3);
+    Matrix<int> matC(4,4,4);
     
-    Matrix sum(4,4,0);
+    Matrix<int> sum(4,4,0);
     sum += matA; 
     sum += matB; 
 
     EXPECT_EQ(matC,sum); 
 }
 
+TEST_F(MatrixTest, Cumulative_Addition_4x4Matrix_Double_Test)
+{
+    Matrix<double> matA(4,4,1.1);
+    Matrix<double> matB(4,4,3.2);
+    Matrix<double> matC(4,4,4.3);
+    
+    Matrix<double> sum(4,4,0.0);
+    sum += matA; 
+    sum += matB; 
 
+    for(int i = 0 ; i < sum.GetRowSize();i++)
+    {
+        for(int j =0 ; j < sum.GetColumnSize();j++)
+        {
+          //  std::cout << sum.m_values_[i][j] << " ";
+        }
+        //std::cout << std::endl;
+    }
+    //EXPECT_NEAR(sum,matC,0.01);
+
+}
 
 
 TEST_F(MatrixTest, Subtraction_2x2Matrix_Test)
 {
-    Matrix matA(2,2,1);
-    Matrix matB(2,2,3);
-    Matrix matC(2,2,-2);
+    Matrix<int> matA(2,2,1);
+    Matrix<int> matB(2,2,3);
+    Matrix<int> matC(2,2,-2);
     
-    Matrix difference = matA - matB; 
+    Matrix<int> difference = matA - matB; 
 
     EXPECT_EQ(matC,difference); 
 }
 
 TEST_F(MatrixTest, Subtraction_3x3Matrix_Test)
 {
-    Matrix matA(3,3,5);
-    Matrix matB(3,3,3);
-    Matrix matC(3,3,2);
+    Matrix<int> matA(3,3,5);
+    Matrix<int> matB(3,3,3);
+    Matrix<int> matC(3,3,2);
     
-    Matrix difference = matA - matB; 
+    Matrix<int> difference = matA - matB; 
 
     EXPECT_EQ(matC,difference); 
 }
 
 TEST_F(MatrixTest, Subtraction_4x4Matrix_Test)
 {
-    Matrix matA(4,4,5);
-    Matrix matB(4,4,3);
-    Matrix matC(4,4,2);
+    Matrix<int> matA(4,4,5);
+    Matrix<int> matB(4,4,3);
+    Matrix<int> matC(4,4,2);
     
-    Matrix difference = matA - matB; 
+    Matrix<int> difference = matA - matB; 
 
     EXPECT_EQ(matC,difference); 
 }
@@ -243,11 +284,11 @@ TEST_F(MatrixTest, Subtraction_4x4Matrix_Test)
 
 TEST_F(MatrixTest, Cumulative_Subtraction_2x2Matrix_Test)
 {
-    Matrix matA(2,2,5);
-    Matrix matB(2,2,3);
-    Matrix matC(2,2,-8);
+    Matrix<int> matA(2,2,5);
+    Matrix<int> matB(2,2,3);
+    Matrix<int> matC(2,2,-8);
     
-    Matrix difference(2,2,0);
+    Matrix<int> difference(2,2,0);
     difference -= matA; 
     difference -= matB;
     EXPECT_EQ(matC,difference); 
@@ -255,11 +296,11 @@ TEST_F(MatrixTest, Cumulative_Subtraction_2x2Matrix_Test)
 
 TEST_F(MatrixTest, Cumulative_Subtraction_3x3Matrix_Test)
 {
-    Matrix matA(3,3,5);
-    Matrix matB(3,3,3);
-    Matrix matC(3,3,-8);
+    Matrix<int> matA(3,3,5);
+    Matrix<int> matB(3,3,3);
+    Matrix<int> matC(3,3,-8);
     
-    Matrix difference(3,3,0);
+    Matrix<int> difference(3,3,0);
     difference -= matA; 
     difference -= matB; 
 
@@ -268,11 +309,11 @@ TEST_F(MatrixTest, Cumulative_Subtraction_3x3Matrix_Test)
 
 TEST_F(MatrixTest, Cumulative_Subtraction_4x4Matrix_Test)
 {
-    Matrix matA(4,4,5);
-    Matrix matB(4,4,3);
-    Matrix matC(4,4,-8);
+    Matrix<int> matA(4,4,5);
+    Matrix<int> matB(4,4,3);
+    Matrix<int> matC(4,4,-8);
     
-    Matrix difference(4,4,0);
+    Matrix<int> difference(4,4,0);
     difference -= matA; 
     difference -= matB; 
 
@@ -281,16 +322,16 @@ TEST_F(MatrixTest, Cumulative_Subtraction_4x4Matrix_Test)
 
 TEST_F(MatrixTest, Multiplication_2x2Matrix_Test)
 {
-    Array2D arrA{{1,2},{3,4}};
-    Matrix matA(arrA);
-    Array2D arrB{{5,6},{7,8}};
+    Array2D<int> arrA{{1,2},{3,4}};
+    Matrix<int> matA(arrA);
+    Array2D<int> arrB{{5,6},{7,8}};
 
-    Matrix matB(arrB);
+    Matrix<int> matB(arrB);
 
-    Matrix product = matA * matB;
+    Matrix<int> product = matA * matB;
 
-    Array2D arrC{{19,22},{43,50}};
-    Matrix mat_to_compare(arrC);
+    Array2D<int> arrC{{19,22},{43,50}};
+    Matrix<int> mat_to_compare(arrC);
 
     EXPECT_EQ(product,mat_to_compare); 
 }
@@ -298,122 +339,138 @@ TEST_F(MatrixTest, Multiplication_2x2Matrix_Test)
 
 TEST_F(MatrixTest, Multiplication_3x3Matrix_Test)
 {
-    Array2D arrA{{1,2,3},{4 ,5 ,6 },{7,8,9}};
-    Matrix matA(arrA);
-    Array2D arrB{{10,11,12},{13,14,15},{16,17,18}};
+    Array2D<int> arrA{{1,2,3},{4 ,5 ,6 },{7,8,9}};
+    Matrix<int> matA(arrA);
+    Array2D<int> arrB{{10,11,12},{13,14,15},{16,17,18}};
 
-    Matrix matB(arrB);
+    Matrix<int> matB(arrB);
 
-    Matrix product = matA * matB;
-    Array2D arrC{{84,90,96},{201,216,231},{318,342,366}};
-    Matrix mat_to_compare(arrC);
+    Matrix<int> product = matA * matB;
+    Array2D<int> arrC{{84,90,96},{201,216,231},{318,342,366}};
+    Matrix<int> mat_to_compare(arrC);
 
     EXPECT_EQ(product,mat_to_compare); 
 }
 
+TEST_F(MatrixTest, Multiplication_3x3Matrix_Float_Test)
+{
+    Array2D<float> arrA{{1.0,2.0,3.0},{4.0 ,5.0 ,6.0 },{7.0,8.0,9.0}};
+    Matrix<float> matA(arrA);
+    Array2D<float> arrB{{10.0,11.0,12.0},{13.0,14.0,15.0},{16.0,17.0,18.0}};
+
+    Matrix<float> matB(arrB);
+
+    Matrix<float> product = matA * matB;
+    Array2D<float> arrC{{84.0,90.0,96.0},{201.0,216.0,231.0},{318.0,342.0,366.0}};
+    Matrix<float> mat_to_compare(arrC);
+
+    EXPECT_EQ(product,mat_to_compare); 
+}
+
+
 TEST_F(MatrixTest, CumulativeMultiplication_2x2Matrix_Test)
 {
-    Array2D arrA{{1,2},{3,4}};
-    Matrix matA(arrA);
-    Array2D arrB{{5,6},{7,8}};
+    Array2D<int> arrA{{1,2},{3,4}};
+    Matrix<int> matA(arrA);
+    Array2D<int> arrB{{5,6},{7,8}};
 
-    Matrix matB(arrB);
+    Matrix<int> matB(arrB);
 
     matA *= matB;
 
-    Array2D arrC{{19,22},{43,50}};
-    Matrix mat_to_compare(arrC);
+    Array2D<int> arrC{{19,22},{43,50}};
+    Matrix<int> mat_to_compare(arrC);
 
     EXPECT_EQ(matA,mat_to_compare); 
 }
 
 TEST_F(MatrixTest, CumulativeMultiplication_3x3Matrix_Test)
 {
-    Array2D arrA{{1,2,3},{4 ,5 ,6 },{7,8,9}};
-    Matrix matA(arrA);
-    Array2D arrB{{10,11,12},{13,14,15},{16,17,18}};
+    Array2D<int> arrA{{1,2,3},{4 ,5 ,6 },{7,8,9}};
+    Matrix<int> matA(arrA);
+    Array2D<int> arrB{{10,11,12},{13,14,15},{16,17,18}};
 
-    Matrix matB(arrB);
+    Matrix<int> matB(arrB);
 
     matA *= matB;
-    Array2D arrC{{84,90,96},{201,216,231},{318,342,366}};
-    Matrix mat_to_compare(arrC);
+    Array2D<int> arrC{{84,90,96},{201,216,231},{318,342,366}};
+    Matrix<int> mat_to_compare(arrC);
 
     EXPECT_EQ(matA,mat_to_compare); 
 }
 
 TEST_F(MatrixTest, ScalarAddition_3x3Matrix_Test)
 {
-    Array2D arrA{{1,2,3},{4 ,5 ,6 },{7,8,9}};
-    Matrix matA(arrA);
+    Array2D<int> arrA{{1,2,3},{4 ,5 ,6 },{7,8,9}};
+    Matrix<int> matA(arrA);
     
 
-    Matrix matB(3,3,0);
+    Matrix<int> matB(3,3,0);
 
     matB = matA + 5;
-    Array2D arrC{{6,7,8},{9 ,10 ,11 },{12,13,14}};
-    Matrix mat_to_compare(arrC);
+    Array2D<int> arrC{{6,7,8},{9 ,10 ,11 },{12,13,14}};
+    Matrix<int> mat_to_compare(arrC);
 
     EXPECT_EQ(matB,mat_to_compare); 
 }
 
 TEST_F(MatrixTest, CumulativeScalarAddition_3x3Matrix_Test)
 {
-    Array2D arrA{{1,2,3},{4 ,5 ,6 },{7,8,9}};
-    Matrix matA(arrA);
+    Array2D<int> arrA{{1,2,3},{4 ,5 ,6 },{7,8,9}};
+    Matrix<int> matA(arrA);
 
 
     matA += 5;
-    Array2D arrC{{6,7,8},{9 ,10 ,11 },{12,13,14}};
-    Matrix mat_to_compare(arrC);
+    Array2D<int> arrC{{6,7,8},{9 ,10 ,11 },{12,13,14}};
+    Matrix<int> mat_to_compare(arrC);
 
     EXPECT_EQ(matA,mat_to_compare); 
 }
 
 TEST_F(MatrixTest, ScalarSubtraction_3x3Matrix_Test)
 {
-    Array2D arrA{{1,2,3},{4 ,5 ,6 },{7,8,9}};
-    Matrix matA(arrA);
-    Matrix matB(3,3,0);
+    Array2D<int> arrA{{1,2,3},{4 ,5 ,6 },{7,8,9}};
+    Matrix<int> matA(arrA);
+    Matrix<int> matB(3,3,0);
     matB = matA - 5;
-    Array2D arrC{{-4,-3,-2},{-1 ,0 ,1 },{2,3,4}};
-    Matrix mat_to_compare(arrC);
+    Array2D<int> arrC{{-4,-3,-2},{-1 ,0 ,1 },{2,3,4}};
+    Matrix<int> mat_to_compare(arrC);
 
     EXPECT_EQ(matB,mat_to_compare); 
 }
 
 TEST_F(MatrixTest, CumulativeScalarSubtraction_3x3Matrix_Test)
 {
-    Array2D arrA{{1,2,3},{4 ,5 ,6 },{7,8,9}};
-    Matrix matA(arrA);
-    Matrix matB(3,3,0);
+    Array2D<int> arrA{{1,2,3},{4 ,5 ,6 },{7,8,9}};
+    Matrix<int> matA(arrA);
+    Matrix<int> matB(3,3,0);
     matA -= 5;
-    Array2D arrC{{-4,-3,-2},{-1 ,0 ,1 },{2,3,4}};
-    Matrix mat_to_compare(arrC);
+    Array2D<int> arrC{{-4,-3,-2},{-1 ,0 ,1 },{2,3,4}};
+    Matrix<int> mat_to_compare(arrC);
 
     EXPECT_EQ(matA,mat_to_compare); 
 }
 
 TEST_F(MatrixTest, Product_Scalar_3x3Matrix_Test)
 {
-    Array2D arrA{{1,2,3},{4 ,5 ,6 },{7,8,9}};
-    Matrix matA(arrA);
-    Matrix matB(3,3,0);
+    Array2D<int> arrA{{1,2,3},{4 ,5 ,6 },{7,8,9}};
+    Matrix<int> matA(arrA);
+    Matrix<int> matB(3,3,0);
     matB = matA * 5;
-    Array2D arrC{{5,10,15},{20 ,25 ,30 },{35,40,45}};
-    Matrix mat_to_compare(arrC);
+    Array2D<int> arrC{{5,10,15},{20 ,25 ,30 },{35,40,45}};
+    Matrix<int> mat_to_compare(arrC);
 
     EXPECT_EQ(matB,mat_to_compare); 
 }
 
 TEST_F(MatrixTest, Cumulative_Product_Scalar_3x3Matrix_Test)
 {
-    Array2D arrA{{1,2,3},{4 ,5 ,6 },{7,8,9}};
-    Matrix matA(arrA);
+    Array2D<int> arrA{{1,2,3},{4 ,5 ,6 },{7,8,9}};
+    Matrix<int> matA(arrA);
 
     matA *= 5;
-    Array2D arrC{{5,10,15},{20 ,25 ,30 },{35,40,45}};
-    Matrix mat_to_compare(arrC);
+    Array2D<int> arrC{{5,10,15},{20 ,25 ,30 },{35,40,45}};
+    Matrix<int> mat_to_compare(arrC);
 
     EXPECT_EQ(matA,mat_to_compare); 
 }

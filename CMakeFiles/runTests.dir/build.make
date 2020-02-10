@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rockerz/gejo/atlatec/programming_task
+CMAKE_SOURCE_DIR = /home/rockerz/gejo/atlatec/git/linear_algebra
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rockerz/gejo/atlatec/programming_task
+CMAKE_BINARY_DIR = /home/rockerz/gejo/atlatec/git/linear_algebra
 
 # Include any dependencies generated for this target.
 include CMakeFiles/runTests.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/runTests.dir/flags.make
 
 CMakeFiles/runTests.dir/test/matrix_test.cpp.o: CMakeFiles/runTests.dir/flags.make
 CMakeFiles/runTests.dir/test/matrix_test.cpp.o: test/matrix_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rockerz/gejo/atlatec/programming_task/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/runTests.dir/test/matrix_test.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/test/matrix_test.cpp.o -c /home/rockerz/gejo/atlatec/programming_task/test/matrix_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rockerz/gejo/atlatec/git/linear_algebra/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/runTests.dir/test/matrix_test.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/test/matrix_test.cpp.o -c /home/rockerz/gejo/atlatec/git/linear_algebra/test/matrix_test.cpp
 
 CMakeFiles/runTests.dir/test/matrix_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runTests.dir/test/matrix_test.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rockerz/gejo/atlatec/programming_task/test/matrix_test.cpp > CMakeFiles/runTests.dir/test/matrix_test.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rockerz/gejo/atlatec/git/linear_algebra/test/matrix_test.cpp > CMakeFiles/runTests.dir/test/matrix_test.cpp.i
 
 CMakeFiles/runTests.dir/test/matrix_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/test/matrix_test.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rockerz/gejo/atlatec/programming_task/test/matrix_test.cpp -o CMakeFiles/runTests.dir/test/matrix_test.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rockerz/gejo/atlatec/git/linear_algebra/test/matrix_test.cpp -o CMakeFiles/runTests.dir/test/matrix_test.cpp.s
 
 CMakeFiles/runTests.dir/test/matrix_test.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/runTests.dir/test/matrix_test.cpp.o.provides.build: CMakeFiles/runTes
 
 CMakeFiles/runTests.dir/src/matrix.cpp.o: CMakeFiles/runTests.dir/flags.make
 CMakeFiles/runTests.dir/src/matrix.cpp.o: src/matrix.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rockerz/gejo/atlatec/programming_task/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/runTests.dir/src/matrix.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/src/matrix.cpp.o -c /home/rockerz/gejo/atlatec/programming_task/src/matrix.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rockerz/gejo/atlatec/git/linear_algebra/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/runTests.dir/src/matrix.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/src/matrix.cpp.o -c /home/rockerz/gejo/atlatec/git/linear_algebra/src/matrix.cpp
 
 CMakeFiles/runTests.dir/src/matrix.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runTests.dir/src/matrix.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rockerz/gejo/atlatec/programming_task/src/matrix.cpp > CMakeFiles/runTests.dir/src/matrix.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rockerz/gejo/atlatec/git/linear_algebra/src/matrix.cpp > CMakeFiles/runTests.dir/src/matrix.cpp.i
 
 CMakeFiles/runTests.dir/src/matrix.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/src/matrix.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rockerz/gejo/atlatec/programming_task/src/matrix.cpp -o CMakeFiles/runTests.dir/src/matrix.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rockerz/gejo/atlatec/git/linear_algebra/src/matrix.cpp -o CMakeFiles/runTests.dir/src/matrix.cpp.s
 
 CMakeFiles/runTests.dir/src/matrix.cpp.o.requires:
 
@@ -118,7 +118,7 @@ runTests: CMakeFiles/runTests.dir/src/matrix.cpp.o
 runTests: CMakeFiles/runTests.dir/build.make
 runTests: /usr/lib/libgtest.a
 runTests: CMakeFiles/runTests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rockerz/gejo/atlatec/programming_task/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable runTests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rockerz/gejo/atlatec/git/linear_algebra/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable runTests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/runTests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -136,6 +136,6 @@ CMakeFiles/runTests.dir/clean:
 .PHONY : CMakeFiles/runTests.dir/clean
 
 CMakeFiles/runTests.dir/depend:
-	cd /home/rockerz/gejo/atlatec/programming_task && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rockerz/gejo/atlatec/programming_task /home/rockerz/gejo/atlatec/programming_task /home/rockerz/gejo/atlatec/programming_task /home/rockerz/gejo/atlatec/programming_task /home/rockerz/gejo/atlatec/programming_task/CMakeFiles/runTests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/rockerz/gejo/atlatec/git/linear_algebra && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rockerz/gejo/atlatec/git/linear_algebra /home/rockerz/gejo/atlatec/git/linear_algebra /home/rockerz/gejo/atlatec/git/linear_algebra /home/rockerz/gejo/atlatec/git/linear_algebra /home/rockerz/gejo/atlatec/git/linear_algebra/CMakeFiles/runTests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/runTests.dir/depend
 

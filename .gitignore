@@ -1,0 +1,8 @@
+CMakeFiles
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+runTests
+.vscode
+compile_commands.json
+.idea

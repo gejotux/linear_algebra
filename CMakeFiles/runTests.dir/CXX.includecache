@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/rockerz/gejo/atlatec/programming_task/src/matrix.cpp
+/home/rockerz/gejo/atlatec/git/linear_algebra/src/matrix.cpp
 matrix.h
 -
 
-/home/rockerz/gejo/atlatec/programming_task/test/matrix_test.cpp
+/home/rockerz/gejo/atlatec/git/linear_algebra/test/matrix_test.cpp
 gtest/gtest.h
 -
 limits
@@ -28,5 +28,11 @@ tuple
 iostream
 -
 vector
+-
+matrix.cpp
+-
+
+src/matrix.cpp
+matrix.h
 -
 

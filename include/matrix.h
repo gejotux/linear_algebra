@@ -7,42 +7,41 @@
 
 namespace linear_algebra_operations
 {
+template <typename T>
+using Array2D = std::vector<std::vector<T> >;
 
-
-    using Array2D = std::vector<std::vector<int> >;
+template <typename T>
 class Matrix
 {
 
   
 public:
     Matrix(){}
-    Matrix(int num_rows,int num_columns,int initial_value);
-    Matrix(Array2D& arr);
-
+    Matrix(int num_rows,int num_columns,T initial_value);
+    virtual ~Matrix() = default;
+    Matrix(Array2D<T>& arr);
     Matrix(const Matrix& mat);  //done
-    Matrix& operator=(const Matrix &rhs) const ; //done
-    Matrix& operator=(const Matrix &rhs) ; //done
+    Matrix<T>& operator=(const Matrix<T> &rhs) const ; //done
+    Matrix<T>& operator=(const Matrix<T> &rhs) ; //done
 
-    bool operator==(const Matrix &rhs) const;  //done
-    bool operator!=(const Matrix &rhs) const;  //done
-    Matrix operator-(const Matrix &rhs) ; //done
-    Matrix& operator-=(const Matrix &rhs); //done
-    Matrix operator+(const Matrix &rhs);  //done
-    Matrix& operator+=(const Matrix &rhs); //done
-    Matrix operator*(const Matrix& rhs); //done
-    Matrix& operator*=(const Matrix &rhs); //done
+    bool operator==(const Matrix<T> &rhs) const;  //done
+    bool operator!=(const Matrix<T> &rhs) const;  //done
+    Matrix<T> operator-(const Matrix<T> &rhs) ; //done
+    Matrix<T>& operator-=(const Matrix<T> &rhs); //done
+    Matrix<T> operator+(const Matrix<T> &rhs);  //done
+    Matrix<T>& operator+=(const Matrix<T> &rhs); //done
+    Matrix<T> operator*(const Matrix<T>& rhs); //done
+    Matrix<T>& operator*=(const Matrix<T> &rhs); //done
 
-    const int& operator()(const int& row,const int& column) const;  //done
-    int& operator()(const int& row,const int& column); //done
+    const T& operator()(const int& row,const int& column) const;  //done
+    T& operator()(const int& row,const int& column); //done
 
-    Matrix operator*(const int& rhs); 
-    Matrix operator-(const int& rhs);
-    Matrix operator+(const int& rhs) ; 
-    Matrix& operator*=(const int& rhs);   
-    Matrix& operator+=(const int& rhs) ;   
-    Matrix& operator-=(const int& rhs) ;   
-
-    friend std::ostream &operator<<(std::ostream &os, const Matrix &matrix); //done
+    Matrix<T> operator*(const T& rhs); 
+    Matrix<T> operator-(const T& rhs);
+    Matrix<T> operator+(const T& rhs); 
+    Matrix<T>& operator*=(const T& rhs);   
+    Matrix<T>& operator+=(const T& rhs);   
+    Matrix<T>& operator-=(const T& rhs);   
 
     int GetRowSize() const{return num_rows_;}
     int GetColumnSize() const {return num_columns_;}
@@ -50,11 +49,15 @@ public:
   private:
    int num_rows_;
    int num_columns_;
-   
-   Array2D m_values_;
+
+   Array2D<T> m_values_;
 };
 
+
+
 }//end of namespace linear_algebra_operations
+
+#include <matrix.cpp>
 
 
 #endif //MATRIX_H
