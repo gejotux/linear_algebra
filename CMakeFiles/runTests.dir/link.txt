@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/runTests.dir/test/matrix_test.cpp.o CMakeFiles/runTests.dir/src/matrix.cpp.o  -o runTests -Wl,-Bstatic -lgtest -Wl,-Bdynamic -lpthread 

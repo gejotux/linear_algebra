@@ -1,0 +1,3 @@
+/home/rockerz/gejo/atlatec/programming_task/CMakeFiles/rebuild_cache.dir
+/home/rockerz/gejo/atlatec/programming_task/CMakeFiles/runTests.dir
+/home/rockerz/gejo/atlatec/programming_task/CMakeFiles/edit_cache.dir

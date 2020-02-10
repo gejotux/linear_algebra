@@ -1,0 +1,41 @@
+[==========] Running 12 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 12 tests from FlightTripDatabaseTest
+[ RUN      ] FlightTripDatabaseTest.CreateAndAddFirstTripEntryToDBSuccess
+Trip/Flight ID  Origin  Destination  Operator  Airfare 
+1.flight_number: AI-854 -- origin_city: Pune -- destination_city: Delhi -- airline operator: AirIndia -- air fare: 5000
+[       OK ] FlightTripDatabaseTest.CreateAndAddFirstTripEntryToDBSuccess (96 ms)
+[ RUN      ] FlightTripDatabaseTest.CreateAndAddSecondTripEntryToDBSuccess
+Trip/Flight ID  Origin  Destination  Operator  Airfare 
+1.flight_number: AI-854 -- origin_city: Pune -- destination_city: Delhi -- airline operator: AirIndia -- air fare: 5000
+2.flight_number: LF-123 -- origin_city: Cochin -- destination_city: Munich -- airline operator: Lufthansa -- air fare: 51000
+[       OK ] FlightTripDatabaseTest.CreateAndAddSecondTripEntryToDBSuccess (12 ms)
+[ RUN      ] FlightTripDatabaseTest.RemoveTripReturnsSuccess
+[       OK ] FlightTripDatabaseTest.RemoveTripReturnsSuccess (17 ms)
+[ RUN      ] FlightTripDatabaseTest.RemoveMultipleTripsReturnsSuccess
+[       OK ] FlightTripDatabaseTest.RemoveMultipleTripsReturnsSuccess (12 ms)
+[ RUN      ] FlightTripDatabaseTest.UpdateFareByTripReturnsSuccess
+Trip/Flight ID  Origin  Destination  Operator  Airfare 
+1.flight_number: AI-854 -- origin_city: Pune -- destination_city: Delhi -- airline operator: AirIndia -- air fare: 5000
+2.flight_number: ER-145 -- origin_city: Bengaluru -- destination_city: Frankfurt -- airline operator: Emirates -- air fare: 60000
+3.flight_number: LF-123 -- origin_city: Cochin -- destination_city: Munich -- airline operator: Lufthansa -- air fare: 51000
+[       OK ] FlightTripDatabaseTest.UpdateFareByTripReturnsSuccess (17 ms)
+[ RUN      ] FlightTripDatabaseTest.FindFlightsByFlightIdReturnsFlightInstance
+[       OK ] FlightTripDatabaseTest.FindFlightsByFlightIdReturnsFlightInstance (25 ms)
+[ RUN      ] FlightTripDatabaseTest.FindFlightsByOriginCityReturnsOneFlightInstance
+[       OK ] FlightTripDatabaseTest.FindFlightsByOriginCityReturnsOneFlightInstance (26 ms)
+[ RUN      ] FlightTripDatabaseTest.FindFlightsByOriginCityReturnsMultipleFlightInstance
+[       OK ] FlightTripDatabaseTest.FindFlightsByOriginCityReturnsMultipleFlightInstance (15 ms)
+[ RUN      ] FlightTripDatabaseTest.FindAverageCostOfAllTrips
+[       OK ] FlightTripDatabaseTest.FindAverageCostOfAllTrips (10 ms)
+[ RUN      ] FlightTripDatabaseTest.FindMaxFareByOperatorTest
+[       OK ] FlightTripDatabaseTest.FindMaxFareByOperatorTest (10 ms)
+[ RUN      ] FlightTripDatabaseTest.UpdateOperatorFareSingleTripTest
+[       OK ] FlightTripDatabaseTest.UpdateOperatorFareSingleTripTest (11 ms)
+[ RUN      ] FlightTripDatabaseTest.FindMinFareBetweenCitiesTest
+[       OK ] FlightTripDatabaseTest.FindMinFareBetweenCitiesTest (16 ms)
+[----------] 12 tests from FlightTripDatabaseTest (283 ms total)
+
+[----------] Global test environment tear-down
+[==========] 12 tests from 1 test suite ran. (357 ms total)
+[  PASSED  ] 12 tests.

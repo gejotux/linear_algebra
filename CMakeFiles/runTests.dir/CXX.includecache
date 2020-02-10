@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/rockerz/gejo/atlatec/programming_task/src/matrix.cpp
+matrix.h
+-
+
+/home/rockerz/gejo/atlatec/programming_task/test/matrix_test.cpp
+gtest/gtest.h
+-
+limits
+-
+matrix.h
+-
+memory
+-
+
+include/matrix.h
+string
+-
+tuple
+-
+iostream
+-
+vector
+-
+

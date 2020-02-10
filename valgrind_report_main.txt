@@ -1,0 +1,40 @@
+Trip/Flight ID  Origin  Destination  Operator  Airfare 
+1.flight_number: AI-167 -- origin_city: Pune -- destination_city: Bengaluru -- airline operator: Vistara -- air fare: 2456
+2.flight_number: AI-854 -- origin_city: Pune -- destination_city: Munich -- airline operator: AirIndia -- air fare: 37000
+3.flight_number: ER-145 -- origin_city: Bengaluru -- destination_city: Berlin -- airline operator: Emirates -- air fare: 45000
+4.flight_number: ER-324 -- origin_city: Pune -- destination_city: Frankfurt -- airline operator: Emirates -- air fare: 45000
+5.flight_number: IN-986 -- origin_city: Pune -- destination_city: Bengaluru -- airline operator: Indigo -- air fare: 4216
+6.flight_number: JA-567 -- origin_city: Pune -- destination_city: Mumbai -- airline operator: Jet Airways -- air fare: 2455
+Removing trip 
+Trip/Flight ID  Origin  Destination  Operator  Airfare 
+1.flight_number: AI-167 -- origin_city: Pune -- destination_city: Bengaluru -- airline operator: Vistara -- air fare: 2456
+2.flight_number: AI-854 -- origin_city: Pune -- destination_city: Munich -- airline operator: AirIndia -- air fare: 37000
+3.flight_number: ER-145 -- origin_city: Bengaluru -- destination_city: Berlin -- airline operator: Emirates -- air fare: 45000
+4.flight_number: ER-324 -- origin_city: Pune -- destination_city: Frankfurt -- airline operator: Emirates -- air fare: 45000
+5.flight_number: IN-986 -- origin_city: Pune -- destination_city: Bengaluru -- airline operator: Indigo -- air fare: 4216
+Update fare by trip ER-324 ,Amount : 5000
+Trip/Flight ID  Origin  Destination  Operator  Airfare 
+1.flight_number: AI-167 -- origin_city: Pune -- destination_city: Bengaluru -- airline operator: Vistara -- air fare: 2456
+2.flight_number: AI-854 -- origin_city: Pune -- destination_city: Munich -- airline operator: AirIndia -- air fare: 37000
+3.flight_number: ER-145 -- origin_city: Bengaluru -- destination_city: Berlin -- airline operator: Emirates -- air fare: 45000
+4.flight_number: ER-324 -- origin_city: Pune -- destination_city: Frankfurt -- airline operator: Emirates -- air fare: 5000
+5.flight_number: IN-986 -- origin_city: Pune -- destination_city: Bengaluru -- airline operator: Indigo -- air fare: 4216
+FindFlightByNumber :AI-854
+flight_number: AI-854 -- origin_city: Pune -- destination_city: Munich -- airline operator: AirIndia -- air fare: 37000
+FindFlightsByOriginCity :Pune
+flight_number: AI-167 -- origin_city: Pune -- destination_city: Bengaluru -- airline operator: Vistara -- air fare: 2456
+flight_number: AI-854 -- origin_city: Pune -- destination_city: Munich -- airline operator: AirIndia -- air fare: 37000
+flight_number: ER-324 -- origin_city: Pune -- destination_city: Frankfurt -- airline operator: Emirates -- air fare: 5000
+flight_number: IN-986 -- origin_city: Pune -- destination_city: Bengaluru -- airline operator: Indigo -- air fare: 4216
+FindAverageCostOfAllTrips
+Average cost = Rs.18734.4
+FindMinFareBetweenCities("Pune","Bengaluru") = 2456
+FindMaxFareByOperator("Indigo") = 4216
+Update fare by Operator(Decrease rates by 20% for Emirates)
+Displaying all the trips
+Trip/Flight ID  Origin  Destination  Operator  Airfare 
+1.flight_number: AI-167 -- origin_city: Pune -- destination_city: Bengaluru -- airline operator: Vistara -- air fare: 2456
+2.flight_number: AI-854 -- origin_city: Pune -- destination_city: Munich -- airline operator: AirIndia -- air fare: 37000
+3.flight_number: ER-145 -- origin_city: Bengaluru -- destination_city: Berlin -- airline operator: Emirates -- air fare: 36000
+4.flight_number: ER-324 -- origin_city: Pune -- destination_city: Frankfurt -- airline operator: Emirates -- air fare: 4000
+5.flight_number: IN-986 -- origin_city: Pune -- destination_city: Bengaluru -- airline operator: Indigo -- air fare: 4216
