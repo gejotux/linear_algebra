@@ -7,8 +7,14 @@
 
 namespace linear_algebra_operations
 {
+
+
+
 template <typename T>
 using Array2D = std::vector<std::vector<T> >;
+
+template <typename T>
+class Vector;
 
 template <typename T>
 class Matrix
@@ -41,7 +47,9 @@ public:
     Matrix<T> operator+(const T& rhs); 
     Matrix<T>& operator*=(const T& rhs);   
     Matrix<T>& operator+=(const T& rhs);   
-    Matrix<T>& operator-=(const T& rhs);   
+    Matrix<T>& operator-=(const T& rhs); 
+    
+    //Vector Multiply(const Vector& vec);  
 
     int GetRowSize() const{return num_rows_;}
     int GetColumnSize() const {return num_columns_;}

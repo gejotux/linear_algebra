@@ -4,6 +4,9 @@
 CMakeFiles/runTests.dir/src/avector.cpp.o
  /home/rockerz/gejo/atlatec/git/linear_algebra/src/avector.cpp
  include/avector.h
+ include/matrix.h
+ src/avector.cpp
+ src/matrix.cpp
 CMakeFiles/runTests.dir/src/matrix.cpp.o
  /home/rockerz/gejo/atlatec/git/linear_algebra/src/matrix.cpp
  include/matrix.h
@@ -11,6 +14,9 @@ CMakeFiles/runTests.dir/src/matrix.cpp.o
 CMakeFiles/runTests.dir/test/avector_test.cpp.o
  /home/rockerz/gejo/atlatec/git/linear_algebra/test/avector_test.cpp
  include/avector.h
+ include/matrix.h
+ src/avector.cpp
+ src/matrix.cpp
 CMakeFiles/runTests.dir/test/matrix_test.cpp.o
  /home/rockerz/gejo/atlatec/git/linear_algebra/test/matrix_test.cpp
  include/matrix.h

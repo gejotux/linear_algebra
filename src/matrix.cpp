@@ -258,6 +258,8 @@ namespace linear_algebra_operations
         return *this;
     }
 
+    
+
 }
 
 #endif

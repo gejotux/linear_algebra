@@ -45,6 +45,12 @@ iostream
 -
 vector
 -
+matrix.h
+include/matrix.h
+exception
+-
+avector.cpp
+-
 
 include/matrix.h
 string
@@ -56,6 +62,14 @@ iostream
 vector
 -
 matrix.cpp
+-
+
+src/avector.cpp
+avector.h
+-
+algorithm
+-
+iterator
 -
 
 src/matrix.cpp
