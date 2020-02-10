@@ -1,4 +1,5 @@
 Programming Task
+----------------
 
 Matrix and Vector class implementation
 
@@ -35,3 +36,5 @@ Vector class
 2. data types supported
 3. Vector and scalar multiplication,
 4. Storage : std::vector
+
+Vector class file name : avector to avoid confusion.

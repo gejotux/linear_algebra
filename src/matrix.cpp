@@ -263,10 +263,10 @@ namespace linear_algebra_operations
     {
         Vector<T> result(vec.GetVectorSize(),0);
 
-        /*if(vec_size_ != mat.GetColumnSize())
+        if(vec.GetVectorSize() != num_columns_)
         {
             throw IncomaptibleSizeException();
-        }*/
+        }
 
         for(int row_index = 0;row_index < num_rows_;row_index++)
         {
